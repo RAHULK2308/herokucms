@@ -1,0 +1,44 @@
+<div class="py-5">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div class="card rounded-0">
+          <div class="card-header">
+            <h4 class="mb-0"> STUDENT LOGIN </h4>
+          </div>
+          <div class="card-body">
+            
+            <form   #userLogin="ngForm" (ngSubmit)="loginUser()">
+           
+              <div >
+                <label for="Email">Email</label>
+                <input type="email" name="email" id="uname" #email="ngModel" [(ngModel)]="student.email"  pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" 
+                [class.is-invalid]="email.invalid && email.touched"
+                required/><br>
+                <small [class.d-name]="email.valid || email.touched" class="text-danger">Enter Valid Email</small>
+                </div>
+                <br>
+              <div>
+                <label>Password</label>
+                <input type="password" name="password"  [(ngModel)]="student.password" required minlength="8"/>
+                
+               
+                </div>
+               
+                <br>
+              <button type="submit" [disabled]="userLogin.form.invalid" class="btn btn-success float-right">Login</button>
+            </form>  
+            <br>  
+            <p>If you don't have any account ? <a routerLink="/studentsignup"> SIGNUP</a></p>                         
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+  
+      </div>
+  
+  
+    </div>
+  </div>

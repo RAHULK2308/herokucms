@@ -1,0 +1,46 @@
+<div class="main">
+   
+<div class="row">
+    <h4> ADD COURSE </h4>
+    <br>
+    <br>
+    <form (ngSubmit)="newcourse()"#courseform="ngForm" class="col s12" style="margin-left: 30px;">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="" name="title" [(ngModel)]="course.title" id="Title" type="text" class="validate" required>
+          <label for="first_name">Course Title</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" name="duration" [(ngModel)]="course.duration" placeholder="" type="text" class="validate" required>
+          <label for="last_name">Course Duration</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input  id="Description" name="description" [(ngModel)]="course.description" placeholder="" type="text" class="validate" required>
+          <label for="Description">Course Description</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="Venue" placeholder="" name="venue" [(ngModel)]="course.venue" type="text" class="validate">
+          <label for="Venue">Course Venue</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+          <input id="StartDate" name="startdate" [(ngModel)]="course.startdate" type="date" class="validate" required>
+          <label for="StartDate"> Start Date</label>
+        </div>
+        <div class="input-field col s8">
+            <input id="EndDate" name="enddate" [(ngModel)]="course.enddate" type="date" class="validate" required>
+            <label for="EndDate"> End Date</label>
+          </div>
+      </div>
+      <div class="input-field col s6">
+        <button type="submit" [disabled]="courseform.form.invalid" class="btn btn-success float-right">Add</button>
+      </div>
+    
+    </form>
+  </div>
+</div>

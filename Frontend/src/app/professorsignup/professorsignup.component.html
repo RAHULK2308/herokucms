@@ -1,0 +1,71 @@
+<div class="py-5">
+    <div class="row">
+      <div class="col-md-5 mx-auto">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div class="card rounded-0">
+          <div class="card-header">
+            <h4 class="mb-0">SIGNUP</h4>
+          </div>
+          <div class="card-body">
+            <form   #userSignup="ngForm" (ngSubmit)="AddUser()">
+                <div >
+                    <label for="UserName">User name </label>
+                    <input type="text" name="uname" id="uname" [(ngModel)]="professor.uname"  required/>
+                 
+                    </div>
+                    <br>
+                  
+              <div >
+                <label for="Email">Email</label>
+                <input type="email" name="email" id="email" #email="ngModel" [(ngModel)]="professor.email" pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}"
+                [class.is-invalid]="email.invalid && email.touched"
+                required/>
+                <br>
+                <small [class.d-name]="email.valid || email.touched" class="text-danger" >Enter Valid Email</small>
+                </div>
+                
+                <br>
+
+                <div >
+                    <label for="Qulification">Qulification </label>
+                    <input type="text" name="qulification" id="uname" [(ngModel)]="professor.qulification"  required/>
+                 
+                    </div>
+                    <br>
+                    <div >
+                        <label for="Experience">Experience </label>
+                        <input type="text" name="experience" id="uname" [(ngModel)]="professor.experience"  required/>
+                     
+                        </div>
+                        <br>
+              <div>
+                <label>Password</label>
+                <input type="password" name="password" id="password" #password="ngModel" [class.is-invalid]=" password.touched" [(ngModel)]="professor.password" required minlength="8"/>
+              <br> 
+              <small [class.d.none]=" password.touched"> Minimum Length of  Password 8</small>
+              </div>
+                
+              
+                <br>
+                <div>
+                    <label> Repeat Password</label>
+                    <input type="password" name="password" id="repeatpassword"   [(ngModel)]="professor.repeatpassword"  minlength="8" required/>
+                    <br>
+                    <small for="message" id="message" class="text-danger">{{message}}</small>
+                  </div>
+                  <br>
+              <button type="submit" [disabled]="userSignup.form.invalid" class="btn btn-success float-right">Signup</button>
+            </form>                             
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+  
+      </div>
+  
+  
+    </div>
+  </div>
+
